@@ -4,8 +4,8 @@ var rightNow = moment().format("MMMM Do, YYYY kk:mm");
 
 var storageInput = $(".text").val();
 
-var loadTasks = function () {
-    localStorage.getItem("text");
+loadTasks = function () {
+
 };
 
 
@@ -29,8 +29,11 @@ $(".time-block").each(function () {
 
 
 $('.saveBtn').click(function () {
-    var storageInput = $(".text").val();
-    localStorage.setItem("text", storageInput);
+    //var storageInput = $(this).parent().siblings(".description").children().val();
+    //console.log(storageInput)
+    var storageTime = $(this).parent().siblings(".hour").children()
+    console.log(storageTime)
+    //localStorage.setItem(storageTime, storageInput);
 });
 
 
