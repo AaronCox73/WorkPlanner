@@ -4,8 +4,10 @@ var rightNow = moment().format("MMMM Do, YYYY kk:mm");
 
 var storageInput = $(".text").val();
 
-loadTasks = function () {
 
+function loadStorage() {
+    localStorage.getItem(storageTime, storageInput);
+    return;
 };
 
 
@@ -29,11 +31,11 @@ $(".time-block").each(function () {
 
 
 $('.saveBtn').click(function () {
-    //var storageInput = $(this).parent().siblings(".description").children().val();
-    //console.log(storageInput)
-    var storageTime = $(this).parent().siblings(".hour").children()
+    var storageInput = $(this).parent().siblings(".description").children().val();
+    console.log(storageInput)
+    var storageTime = $(this).parent().siblings(".hour").children().text()
     console.log(storageTime)
-    //localStorage.setItem(storageTime, storageInput);
+    localStorage.setItem(storageTime, storageInput);
 });
 
 
