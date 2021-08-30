@@ -34,12 +34,12 @@ var loadStorage = JSON.parse(localStorage.getItem("appointments"))
 
 
 
-$('.saveBtn').click(function () {
+$('.saveBtn').click(function (saveAppt) {
     var storageInput = $(this).parent().siblings(".description").children().val();
     console.log(storageInput)
     var storageTime = $(this).parent().siblings(".hour").children().text()
     console.log(storageTime)
-    localStorage.setItem("appointments", saveAppointment)
+    localStorage.setItem("appointments", saveAppt)
     //localStorage.setItem(storageTime, storageInput);
 });
 
