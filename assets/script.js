@@ -1,14 +1,10 @@
 
 // creating the current time 
 var rightNow = moment().format("MMMM Do, YYYY kk:mm");
-
+var storageTime = $(this).parent().siblings(".hour").children().text()
 var storageInput = $(".text").val();
+var storageInput = $(this).parent().siblings(".description").children().val();
 
-
-function loadStorage() {
-    localStorage.getItem(storageTime, storageInput);
-    return;
-};
 
 
 var hour = parseInt(moment().format("kk"));
@@ -30,12 +26,21 @@ $(".time-block").each(function () {
 });
 
 
+var saveAppt = {
+    time: storageTime,
+    input: storageInput
+};
+var loadStorage = JSON.parse(localStorage.getItem("appointments"))
+
+
+
 $('.saveBtn').click(function () {
     var storageInput = $(this).parent().siblings(".description").children().val();
     console.log(storageInput)
     var storageTime = $(this).parent().siblings(".hour").children().text()
     console.log(storageTime)
-    localStorage.setItem(storageTime, storageInput);
+    localStorage.setItem("appointments", saveAppointment)
+    //localStorage.setItem(storageTime, storageInput);
 });
 
 
